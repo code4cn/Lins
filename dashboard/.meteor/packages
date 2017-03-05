@@ -34,8 +34,6 @@ raix:handlebar-helpers
 meteorhacks:subs-manager
 meteorhacks:unblock
 
-
-
 # UI
 fortawesome:fontawesome
 natestrauser:animate-css

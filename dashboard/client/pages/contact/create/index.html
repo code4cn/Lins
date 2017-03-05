@@ -1,0 +1,84 @@
+<template name="contactCreate">
+	<div class="min-warp">
+        <div class="ui breadcrumb">
+            <a class="section" href="/">系统首页</a>
+            <div class="divider"> / </div>
+            <a class="section" href="/contact">联系人管理</a>
+            <div class="divider"> / </div>
+            <div class="active section">新建联系人</div>
+        </div>
+        <div class="ui form">
+            <div class="fields three">
+                <div class="field">
+                    <label>姓名:</label>
+                    <input type="text" id="name" value="" >
+                </div>
+                <div class="field">
+                    <label>昵称:</label>
+                    <input type="text" id="nick" value="" >
+                </div>
+                <div class="field">
+                    <label>联系方式:</label>
+                    <input type="text" id="tel" value="" >
+                </div>
+            </div>
+            <div class="fields three">
+                <div class="field">
+                    <label>性别:</label>
+                    <select id="sex">
+                        <option value="M">男</option>
+                        <option value="F">女</option>
+                    </select>
+                </div>
+                 <div class="field">
+                    <label>类型:</label>
+                    <select id="category">
+                        {{#each categorys 'root'}}
+                            <optgroup label="{{name}}">
+                                {{#each categorys _id}}
+                                 <option value="{{_id}}">{{name}}</option>
+                                 {{/each}}
+                            </optgroup>
+                           
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="field">
+                    <label>地区:</label>
+                    <select id="area">
+                        {{#each areas 'root'}}
+                            <optgroup label="{{name}}">
+                                {{#each areas _id}}
+                                 <option value="{{_id}}">{{name}}</option>
+                                 {{/each}}
+                            </optgroup>
+                           
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="fields two">
+                <div class="field">
+                    <label>介绍人:</label>
+                    <input type="text" id="channel" value="" >
+                </div>
+                <div class="field">
+                    <label>头衔:</label>
+                    <input type="text" id="title" value="" >
+                </div>
+                <div class="field">
+                    <label>公司:</label>
+                    <input type="text" id="company" value="" >
+                </div>
+            </div>
+            <div class="field">
+                <label>备注:</label>
+                <textarea id="remark"></textarea>
+             </div>
+            <div class="ui positive right labeled icon button" id="save">
+                保存
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+</template>

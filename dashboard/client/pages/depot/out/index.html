@@ -1,0 +1,41 @@
+<template name="depotOut">
+    <div class="min-warp">
+        <div class="ui breadcrumb">
+            <a class="section" href="/">系统首页</a>
+            <div class="divider"> / </div>
+            <a class="section" href="/depot">仓库管理</a>
+            <div class="divider"> / </div>
+            <a class="section" href="/goods">物资管理</a>
+            <div class="divider"> / </div>
+            <div class="active section">{{goods.name}} 出库</div>
+        </div>
+        <div class="ui form">
+            <div class="fields two">
+                <div class="field">
+                    <label>数量:</label>
+                    <input type="number" id="num" value="{{num}}" max="{{num}}">
+                </div>
+                <div class="field">
+                    <label>物流成本:</label>
+                    <input type="number" id="logistic" value="0">
+                </div>
+            </div>
+            <div class="field">
+                <label>签收负责人:</label>
+                <select id="admin">
+                    {{#each admins}}
+                        <option value="{{_id}}" >{{profile.nickname}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="field">
+                <label>备注:</label>
+                <textarea id="remark"></textarea>
+            </div>
+            <div class="ui positive right labeled icon button" id="save">
+                保存
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+</template>

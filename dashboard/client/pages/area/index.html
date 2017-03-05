@@ -1,0 +1,7 @@
+<template name="area">
+	{{#if isNotRoot}}
+	<a class="ui right" href="" onclick="_area.children('root')"><i class="icon angle up"></i>返回上级</a>
+	{{/if }}
+	<a class="" href="/area/create{{isChildren}}"><i class="icon plus"></i>添加地区</a>
+    {{>grid option=option id="area"}}
+</template>
